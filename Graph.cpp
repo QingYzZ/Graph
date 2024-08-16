@@ -74,6 +74,18 @@ class Graph {
         return false;
     }
 
+	bool changeWeight(V goesFrom, V goesTo, int newWeight) {
+		/* Check if the source vertex exists */
+		if (ifContainVertex(goesFrom) && ifContainVertex(goesTo)) {
+			/* adjust to the new weight */
+			adjList[goesFrom][goesTo] = newWeight;
+			return true; /* simply returns true */
+		}
+		/* If the edge or vertices don't exist, return false */
+		return false; 
+	}
+
+
     /* Method to display the graph */
     void printGraph() {
         for (auto &pair : adjList) {
